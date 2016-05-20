@@ -1,0 +1,57 @@
+input {
+	tcp {
+		port => 10514
+		type => F5syslog
+	}
+	tcp {
+		port => 11514
+		type => WindowsEventLog
+		codec => json
+	}
+	beats {
+		port => 5044
+	}
+}
+
+filter {
+	if [type] == "F5syslog" {
+		grok {     
+			break_on_match => false
+			match => [ "message", "\A%{SYSLOG5424PRI}%{SYSLOGTIMESTAMP} slot1\/%{HOSTNAME:logsource} %{LOGLEVEL:severity_label} %{SYSLOGPROG}: %{GREEDYDATA:info}" ]
+			add_tag => "grokked_syslog_f5"      
+		} 
+		mutate {
+			gsub => [ 
+				"severity_label", "err", "error",
+				"severity_label", "info", "informational",
+				"severity_label", "crit", "critical"
+			]
+		}  
+	}
+
+	if [type] == "syslog" {
+		grok {
+			match => { "message" => "<%{POSINT:syslog_pri}>%{SYSLOGTIMESTAMP:syslog_timestamp} %{SYSLOGHOST:syslog_hostname} %{DATA:syslog_program}(?:\[%{POSINT:syslog_pid}\])?: %{GREEDYDATA:syslog_message}" }
+		}
+	}
+
+	if [type] == "WindowsEventLog" {
+		json {
+			source => "message"
+		}
+		if [SourceModuleName] == "eventlog" {
+			mutate {
+				replace => [ "message", "%{Message}" ]
+			}
+			mutate {
+				remove_field => [ "Message" ]
+			}
+		}
+	}
+}
+
+output {
+	elasticsearch {
+		hosts => ["search.cp.punkinnovation.com:9200"]
+       	}
+}
