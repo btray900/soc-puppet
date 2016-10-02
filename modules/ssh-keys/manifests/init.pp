@@ -7,10 +7,10 @@ class ssh-keys {
 	}
 
 	exec { 'betraz keys':
-		user    => betrayz,
-		group   => betrayz,
-		command => '/bin/mkdir /home/betrayz/.ssh', 
-		creates => '/home/betrayz/.ssh',
+		user    => socadmin,
+		group   => socadmin,
+		command => '/bin/mkdir /home/socadmin/.ssh', 
+		creates => '/home/socadmin/.ssh',
 	}
 
 	file { '/root/.ssh/id_rsa':
@@ -34,24 +34,24 @@ class ssh-keys {
 		source  => 'puppet:///modules/ssh-keys/authorized_keys.root',
     	}
 
-	file { '/home/betrayz/.ssh/id_rsa':
-        	owner   => betrayz,
-        	group   => betrayz,
+	file { '/home/socadmin/.ssh/id_rsa':
+        	owner   => socadmin,
+        	group   => socadmin,
         	mode    => 600,
-		source  => 'puppet:///modules/ssh-keys/id_rsa.betrayz.priv',
+		source  => 'puppet:///modules/ssh-keys/id_rsa.socadmin.priv',
     	}
 
-	file { '/home/betrayz/.ssh/id_rsa.pub':
-        	owner   => betrayz,
-        	group   => betrayz,
+	file { '/home/socadmin/.ssh/id_rsa.pub':
+        	owner   => socadmin,
+        	group   => socadmin,
         	mode    => 644,
-		source  => 'puppet:///modules/ssh-keys/id_rsa.betrayz.pub',
+		source  => 'puppet:///modules/ssh-keys/id_rsa.socadmin.pub',
 	}
 
-	file { '/home/betrayz/.ssh/authorized_keys':
-        	owner   => betrayz,
-        	group   => betrayz,
+	file { '/home/socadmin/.ssh/authorized_keys':
+        	owner   => socadmin,
+        	group   => socadmin,
         	mode    => 600,
-		source  => 'puppet:///modules/ssh-keys/authorized_keys.betrayz',
+		source  => 'puppet:///modules/ssh-keys/authorized_keys.socadmin',
     	}
 }

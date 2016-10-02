@@ -1,6 +1,5 @@
 #################################################################################
 ######               FILE IS PUPPET CONTROLLED                             ######
-######                puppetmaster: 10.20.0.1                              ######
 ######     /etc/puppet/modules/hosts/templates/hosts.erb                   ######
 #################################################################################
 
@@ -19,58 +18,55 @@ ff02::3 ip6-allhosts
 
 # KICKSTART/PXE NETWORK
 
-10.20.0.1	puppetmaster puppet master
+10.0.48.1	puppetmaster puppet master
 
-10.20.0.11	haproxy01.ks.punkinnovation.com haproxy01
-10.20.0.12	haproxy02.ks.punkinnovation.com haproxy02
+10.0.48.11	haproxy01.ks.vimro.com haproxy01
+10.0.48.12	haproxy02.ks.vimro.com haproxy02
 
-10.20.0.21	search01.ks.punkinnovation.com search01
-10.20.0.22	search02.ks.punkinnovation.com search02
-10.20.0.23	search03.ks.punkinnovation.com search03
-10.20.0.24	search04.ks.punkinnovation.com search04
-10.20.0.25	search05.ks.punkinnovation.com search05
-10.20.0.26	search06.ks.punkinnovation.com search06
+10.0.48.21	search01.ks.vimro.com search01
+10.0.48.22	search02.ks.vimro.com search02
+10.0.48.23	search03.ks.vimro.com search03
+10.0.48.24	search04.ks.vimro.com search04
+10.0.48.25	search05.ks.vimro.com search05
+10.0.48.26	search06.ks.vimro.com search06
 
-10.20.0.31	logstash01.ks.punkinnovation.com logstash01
-10.20.0.32	logstash02.ks.punkinnovation.com logstash02
-10.20.0.33	logstash03.ks.punkinnovation.com logstash03
+10.0.48.31	logstash01.ks.vimro.com logstash01
+10.0.48.32	logstash02.ks.vimro.com logstash02
+10.0.48.33	logstash03.ks.vimro.com logstash03
 
-10.20.0.41	kibana01.ks.punkinnovation.com kibana01
-10.20.0.42	kibana02.ks.punkinnovation.com kibana02
-10.20.0.43	kibana03.ks.punkinnovation.com kibana03
+10.0.48.41	kibana01.ks.vimro.com kibana01
+10.0.48.42	kibana02.ks.vimro.com kibana02
+10.0.48.43	kibana03.ks.vimro.com kibana03
 
-10.20.0.91	puppetmaster01.ks.punkinnovation.com puppetmaster01
-10.20.0.92	puppetmaster02.ks.punkinnovation.com puppetmaster02
 
 # CONTROL PLANE
 
-172.16.1.11	haproxy01.cp.punkinnovation.com
-172.16.1.12	haproxy02.cp.punkinnovation.com
+172.16.49.11	haproxy01.cp.vimro.com
+172.16.49.12	haproxy02.cp.vimro.com
 
-172.16.1.21	search01.cp.punkinnovation.com
-172.16.1.22	search02.cp.punkinnovation.com
-172.16.1.23	search03.cp.punkinnovation.com
-172.16.1.24	search04.cp.punkinnovation.com
-172.16.1.25	search05.cp.punkinnovation.com
-172.16.1.26	search06.cp.punkinnovation.com
+172.16.49.21	search01.cp.vimro.com
+172.16.49.22	search02.cp.vimro.com
+172.16.49.23	search03.cp.vimro.com
+172.16.49.24	search04.cp.vimro.com
+172.16.49.25	search05.cp.vimro.com
+172.16.49.26	search06.cp.vimro.com
 
-172.16.1.31	logstash01.cp.punkinnovation.com
-172.16.1.32	logstash02.cp.punkinnovation.com
-172.16.1.33	logstash03.cp.punkinnovation.com
+172.16.49.31	logstash01.cp.vimro.com
+172.16.49.32	logstash02.cp.vimro.com
+172.16.49.33	logstash03.cp.vimro.com
 
-172.16.1.41	kibana01.cp.punkinnovation.com
-172.16.1.42	kibana02.cp.punkinnovation.com
-172.16.1.43	kibana03.cp.punkinnovation.com
+172.16.49.41	kibana01.cp.vimro.com
+172.16.49.42	kibana02.cp.vimro.com
+172.16.49.43	kibana03.cp.vimro.com
 
-172.16.1.91	puppetmaster01.cp.punkinnovation.com
-172.16.1.92	puppetmaster01.cp.punkinnovation.com
-
-172.16.1.220	search.cp.punkinnovation.com
-172.16.1.230	logstash.cp.punkinnovation.com
-172.16.1.240	kibana.cp.punkinnovation.com	
+# CP VIPS
+172.16.49.220	search.cp.vimro.com
+172.16.49.230	logstash.cp.vimro.com
+172.16.49.240	kibana.cp.vimro.com	
 
 
 # DATA PLANE
 
-172.16.2.230	logstash.dp.punkinnovation.com
-172.16.2.240	kibana.dp.punkinnovation.com	
+# DP VIPS
+172.16.50.230	logstash.dp.vimro.com
+172.16.50.240	kibana.dp.vimro.com	

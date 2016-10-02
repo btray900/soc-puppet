@@ -1,8 +1,0 @@
-#################################################################################
-######               FILE IS PUPPET CONTROLLED                             ######
-######                puppetmaster: 10.20.0.1                              ######
-######     /etc/puppet/modules/ssh-key/files/authorized_keys.betrayz       ######
-#################################################################################
-
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC+RPaMsOCXON/tvET+O+Dh9WWAOzy4VNtLJ4qkFrADrLQuOYyKCG0epvqgZKOUSP8SL/7sCJGp8NlkqTnpx4cuFV09QcBYwLwjziWLFhTVktTYUBFLyjzYD2L2veeU2XKO16KYekuG5rSbDvxHN2ftAS0MhTT0HFJ3zTS81CVS7tKyZ3CPHtYBS5DlYuycqBgRnLeRw8+bpA0cWzoFFCxJN75ly9A+NkwAStXQEIaP+FxUOvY7fK7vJkrDg3EsgY7L9GX3jHq8Ns05m33Iya3PGluV7YEx5I8QJ2ciGlU7e4+ONJ+7R2TBECO5VSvxxpnjdlM1pt9lG7D237B936Wp betrayz@puppetmaster
-ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDaQzLqXNd3rpVbgnZBIiYg6d+JW1MZhEnyxifXmrva5/6aZfzdJ6z84XGHfsyZ8H/fDtLsW1zWVY9cQ+6t9d4SbjWhusUdQgX1jp2gLRUI72eFpCFOYQqU2nRwbCUwmNyflacX6hWhoy8gKJiIPjSdDi0W7nKXMJ0gEkcwBKQCO8aTtfnKimjtaBd9sfAo0X3qOqkcBXvI+Nsz6DKOpmysVFm9esjLOsOKRVPV4bOaxydlAuPjji6Vt8cBEBUYhTR+rZYhGjJrFSDvqYZrvvTrnRQheXG0CeFBPZRe95ZCHvqXmj3DW6VoqAjwGkiyxwLa9a8WXn1lTHy/MSuSWcpH root@puppetmaster
