@@ -39,6 +39,9 @@ node 'kibana01.ks.vimro.com' {
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*'],
         }
+	class { '::ntp':
+		servers => ['10.0.48.1'],
+	}
 }
 
 node 'kibana02.ks.vimro.com' {
@@ -82,6 +85,9 @@ node 'kibana02.ks.vimro.com' {
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*'],
         }
+	class { '::ntp':
+		servers => ['10.0.48.1'],
+	}
 }
 
 node 'kibana03.ks.vimro.com' {
@@ -125,4 +131,7 @@ node 'kibana03.ks.vimro.com' {
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*'],
         }
+	class { '::ntp':
+		servers => ['10.0.48.1'],
+	}
 }

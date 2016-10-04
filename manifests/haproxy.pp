@@ -23,6 +23,9 @@ node 'haproxy01.ks.vimro.com' {
 	elastic_filebeat::prospector{'system_logs':
 		paths => ['/var/log/*'],
 	}
+	class { '::ntp':
+		servers => ['10.0.48.1'],
+	}
 }
 
 node 'haproxy02.ks.vimro.com' {
@@ -49,5 +52,8 @@ node 'haproxy02.ks.vimro.com' {
 	}
 	elastic_filebeat::prospector{'system_logs':
 		paths => ['/var/log/*'],
+	}
+	class { '::ntp':
+		servers => ['10.0.48.1'],
 	}
 }

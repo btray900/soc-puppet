@@ -32,6 +32,9 @@ node 'search01.ks.vimro.com' {
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*','/var/log/elasticsearch/01/*.log'],
         }
+        class { '::ntp':
+                servers => ['10.0.48.1'],
+        }
 }
 
 node 'search02.ks.vimro.com' {
@@ -67,6 +70,9 @@ node 'search02.ks.vimro.com' {
         }
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*','/var/log/elasticsearch/02/*.log'],
+        }
+        class { '::ntp':
+                servers => ['10.0.48.1'],
         }
 }
 
@@ -104,6 +110,9 @@ node 'search03.ks.vimro.com' {
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*','/var/log/elasticsearch/03/*.log'],
         }
+        class { '::ntp':
+                servers => ['10.0.48.1'],
+        }
 }
 
 node 'search04.ks.vimro.com' {
@@ -139,6 +148,9 @@ node 'search04.ks.vimro.com' {
         }
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*','/var/log/elasticsearch/04/*.log'],
+        }
+        class { '::ntp':
+                servers => ['10.0.48.1'],
         }
 }
 
@@ -177,6 +189,9 @@ node 'search05.ks.vimro.com' {
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*','/var/log/elasticsearch/05/*.log'],
         }
+        class { '::ntp':
+                servers => ['10.0.48.1'],
+        }
 }
 
 node 'search06.ks.vimro.com' {
@@ -212,6 +227,9 @@ node 'search06.ks.vimro.com' {
         }
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*','/var/log/elasticsearch/06/*.log'],
+        }
+        class { '::ntp':
+                servers => ['10.0.48.1'],
         }
 }
 
