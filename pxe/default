@@ -1,0 +1,104 @@
+MENU WIDTH 80
+MENU MARGIN 10
+MENU PASSWORDMARGIN 3
+MENU ROWS 10
+MENU TABMSGROW 15
+MENU CMDLINEROW 15
+MENU ENDROW 24
+MENU PASSWORDROW 11
+MENU TIMEOUTROW 16
+MENU TITLE Pressed Installers
+menu color title 1;34;49 #eea0a0ff #cc333355 std
+menu color sel 7;37;40 #ff000000 #bb9999aa all
+menu color border 30;44 #ffffffff #00000000 std
+menu color pwdheader 31;47 #eeff1010 #20ffffff std
+menu color hotkey 35;40 #90ffff00 #00000000 std
+menu color hotsel 35;40 #90000000 #bb9999aa all
+menu color timeout_msg 35;40 #90ffffff #00000000 none
+menu color timeout 31;47 #eeff1010 #00000000 none
+prompt 0
+noescape 1
+timeout 0
+default pxelinux.cfg/vesamenu.c32
+
+### HAPROXY NODES
+
+LABEL haproxy01
+    MENU LABEL Install 16.04.1 - haproxy01
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=haproxy01 url=http://10.0.48.1/preseed/haproxy01.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL haproxy02
+    MENU LABEL Install 16.04.1 - haproxy02
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=haproxy02 url=http://10.0.48.1/preseed/haproxy02.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+
+### ELASTICSEARCH NODE
+
+LABEL search01
+    MENU LABEL Install 16.04.1 - search01
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=search01 url=http://10.0.48.1/preseed/search01.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL search02
+    MENU LABEL Install 16.04.1 - search02
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=search02 url=http://10.0.48.1/preseed/search02.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL search03
+    MENU LABEL Install 16.04.1 - search03
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=search03 url=http://10.0.48.1/preseed/search03.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL search04
+    MENU LABEL Install 16.04.1 - search04
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=search04 url=http://10.0.48.1/preseed/search04.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL search05
+    MENU LABEL Install 16.04.1 - search05
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=search05 url=http://10.0.48.1/preseed/search05.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL search06
+    MENU LABEL Install 16.04.1 - search06
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=search06 url=http://10.0.48.1/preseed/search06.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+
+### LOGSTASH NODES
+
+LABEL logstash01
+    MENU LABEL Install 16.04.1 - logstash01
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=logstash01 url=http://10.0.48.1/preseed/logstash01.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL logstash02
+    MENU LABEL Install 16.04.1 - logstash02
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=logstash02 url=http://10.0.48.1/preseed/logstash02.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL logstash03
+    MENU LABEL Install 16.04.1 - logstash03
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=logstash03 url=http://10.0.48.1/preseed/logstash03.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+
+### KIBANA NODES
+
+LABEL kibana01
+    MENU LABEL Install 16.04.1 - kibana01
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=kibana01 url=http://10.0.48.1/preseed/kibana01.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL kibana02
+    MENU LABEL Install 16.04.1 - kibana02
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=kibana02 url=http://10.0.48.1/preseed/kibana02.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL kibana03
+    MENU LABEL Install 16.04.1 - kibana03
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=kibana03 url=http://10.0.48.1/preseed/kibana03.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
