@@ -21,16 +21,16 @@ node 'search01.ks.vimro.com' {
 			'discovery.zen.ping.multicast.enabled' => 'false',
 			'discovery.zen.ping.unicast.hosts' => ['search02.cp.vimro.com','search03.cp.vimro.com','search04.cp.vimro.com','search05.cp.vimro.com','search06.cp.vimro.com'],
 		},
-		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
+		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.4.1.deb',
 	}
-	elasticsearch::instance { '01': }
+	elasticsearch::instance { 'search01': }
         class {'elastic_filebeat':
                 package_file => '/tmp/filebeat_1.2.2_amd64.deb',
                 logstash_output_enabled => true,
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/01/*.log'],
+                paths => ['/var/log/*','/var/log/elasticsearch/search01/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
@@ -62,14 +62,14 @@ node 'search02.ks.vimro.com' {
 		},
 		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
 	}
-	elasticsearch::instance { '02': }
+	elasticsearch::instance { 'search02': }
         class {'elastic_filebeat':
                 package_file => '/tmp/filebeat_1.2.2_amd64.deb',
                 logstash_output_enabled => true,
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/02/*.log'],
+                paths => ['/var/log/*','/var/log/elasticsearch/search02/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
@@ -101,14 +101,14 @@ node 'search03.ks.vimro.com' {
 		},
 		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
 	}
-	elasticsearch::instance { '03': }
+	elasticsearch::instance { 'search03': }
         class {'elastic_filebeat':
                 package_file => '/tmp/filebeat_1.2.2_amd64.deb',
                 logstash_output_enabled => true,
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/03/*.log'],
+                paths => ['/var/log/*','/var/log/elasticsearch/search03/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
@@ -140,14 +140,14 @@ node 'search04.ks.vimro.com' {
 		},
 		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
 	}
-	elasticsearch::instance { '04': }
+	elasticsearch::instance { 'search04': }
         class {'elastic_filebeat':
                 package_file => '/tmp/filebeat_1.2.2_amd64.deb',
                 logstash_output_enabled => true,
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/04/*.log'],
+                paths => ['/var/log/*','/var/log/elasticsearch/search04/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
@@ -180,14 +180,14 @@ node 'search05.ks.vimro.com' {
 		},
 		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
 	}
-	elasticsearch::instance { '05': }
+	elasticsearch::instance { 'search05': }
         class {'elastic_filebeat':
                 package_file => '/tmp/filebeat_1.2.2_amd64.deb',
                 logstash_output_enabled => true,
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/05/*.log'],
+                paths => ['/var/log/*','/var/log/elasticsearch/search05/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
@@ -219,14 +219,14 @@ node 'search06.ks.vimro.com' {
 		},
 		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
 	}
-	elasticsearch::instance { '06': }
+	elasticsearch::instance { 'search06': }
         class {'elastic_filebeat':
                 package_file => '/tmp/filebeat_1.2.2_amd64.deb',
                 logstash_output_enabled => true,
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/06/*.log'],
+                paths => ['/var/log/*','/var/log/elasticsearch/search06/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
