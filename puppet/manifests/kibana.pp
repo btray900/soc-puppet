@@ -38,7 +38,7 @@ node 'kibana01.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*'],
+                paths => ['/var/log/*','/var/log/elasticsearch/kibana01/*','/var/log/kibana/*'],
         }
 	class { '::ntp':
 		servers => ['10.0.48.1'],
@@ -85,7 +85,7 @@ node 'kibana02.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*'],
+                paths => ['/var/log/*','/var/log/elasticsearch/kibana02/*','/var/log/kibana/*'],
         }
 	class { '::ntp':
 		servers => ['10.0.48.1'],
@@ -132,7 +132,7 @@ node 'kibana03.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*'],
+                paths => ['/var/log/*','/var/log/elasticsearch/kibana03/*','/var/log/kibana/*'],
         }
 	class { '::ntp':
 		servers => ['10.0.48.1'],
