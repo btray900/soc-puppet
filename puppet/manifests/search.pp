@@ -30,7 +30,7 @@ node 'search01.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/search01/*.log'],
+                paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log','/var/log/elasticsearch/search01/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
@@ -69,7 +69,7 @@ node 'search02.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/search02/*.log'],
+                paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log','/var/log/elasticsearch/search02/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
@@ -108,7 +108,7 @@ node 'search03.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/search03/*.log'],
+                paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log','/var/log/elasticsearch/search03/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
@@ -147,7 +147,7 @@ node 'search04.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/search04/*.log'],
+                paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log','/var/log/elasticsearch/search04/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
@@ -187,7 +187,7 @@ node 'search05.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/search05/*.log'],
+                paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log','/var/log/elasticsearch/search05/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
@@ -226,7 +226,7 @@ node 'search06.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*','/var/log/elasticsearch/search06/*.log'],
+                paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log','/var/log/elasticsearch/search06/*.log'],
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],

@@ -102,3 +102,7 @@ LABEL kibana03
     KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
     APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=kibana03 url=http://10.0.48.1/preseed/kibana03.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
 
+LABEL kibana04
+    MENU LABEL Install 16.04.1 - kibana04
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=kibana04 url=http://10.0.48.1/preseed/kibana04.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
