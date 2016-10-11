@@ -1,0 +1,30 @@
+#################################################################################
+######               FILE IS PUPPET CONTROLLED                             ######
+######     /etc/puppet/modules/networking/files/kibana01.interfaces        ######
+#################################################################################
+
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto ens160
+iface ens160 inet static
+        address 10.0.48.51
+        netmask 255.255.255.0
+        network 10.0.48.0
+        broadcast 10.0.48.255
+        gateway 10.0.48.1
+        # dns-* options are implemented by the resolvconf package, if installed
+        dns-nameservers 10.0.48.1
+        dns-search ks.vimro.com
+
+auto ens192
+iface ens192 inet static
+        address 172.16.49.51
+        netmask 255.255.255.0
+        network 172.16.49.0
+        broadcast 172.16.49.255
