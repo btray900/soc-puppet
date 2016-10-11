@@ -14,7 +14,7 @@ node 'nagios01.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log'],
+                paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log','/usr/local/nagios/var/*.log'],
         }
 	class { '::ntp':
 		servers => ['10.0.48.1'],
@@ -37,7 +37,7 @@ node 'nagios02.ks.vimro.com' {
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
         elastic_filebeat::prospector{'system_logs':
-                paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log'],
+                paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log','/usr/local/nagios/var/*.log'],
         }
 	class { '::ntp':
 		servers => ['10.0.48.1'],
