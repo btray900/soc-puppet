@@ -1,4 +1,4 @@
-node default {
+node soc-puppet {
 	include hosts
 	include ssh-keys
 	include postfix

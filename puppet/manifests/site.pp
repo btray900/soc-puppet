@@ -1,4 +1,5 @@
 import 'default.pp'
+import 'soc-puppet.pp'
 import 'haproxy.pp'
 import 'search.pp'
 import 'logstash.pp'
