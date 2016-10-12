@@ -41,22 +41,17 @@ pid_file=/var/run/nagios/nrpe.pid
 server_port=5666
 
 
-
 # SERVER ADDRESS
 # Address that nrpe should bind to in case there are more than one interface
 # and you do not want nrpe to bind on all interfaces.
 # NOTE: This option is ignored if NRPE is running under either inetd or xinetd
 
 <% if @ipaddress_ens192 =~ /172\.16\.49\./ %>
-
 server_address=<%= @ipaddress_ens192 %>
-
 <% end %>
 
 <% if @ipaddress_ens224 =~ /172\.16\.49\./ %>
-
 server_address=<%= @ipaddress_ens224 %>
-
 <% end %>
 
 

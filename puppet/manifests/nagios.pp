@@ -5,6 +5,7 @@ node 'nagios01.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+	include nagios-server
 	class { 'networking': 
 		source => 'puppet:///modules/networking/nagios01.interfaces',
 	}

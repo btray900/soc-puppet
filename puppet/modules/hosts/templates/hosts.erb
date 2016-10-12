@@ -18,7 +18,7 @@ ff02::3 ip6-allhosts
 
 # KICKSTART/PXE NETWORK
 
-10.0.48.1	puppetmaster puppet master
+10.0.48.1	puppet.ks.vimro.com puppetmaster puppet soc-puppet
 
 10.0.48.11	haproxy01.ks.vimro.com haproxy01
 10.0.48.12	haproxy02.ks.vimro.com haproxy02
@@ -43,6 +43,8 @@ ff02::3 ip6-allhosts
 10.0.48.52	nagios02.ks.vimro.com nagios02
 
 # CONTROL PLANE
+
+172.16.49.1	soc-puppet.cp.vimro.com
 
 172.16.49.11	haproxy01.cp.vimro.com
 172.16.49.12	haproxy02.cp.vimro.com
