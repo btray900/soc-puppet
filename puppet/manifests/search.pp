@@ -5,6 +5,7 @@ node 'search01.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+	include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/search01.interfaces',
 	}
@@ -44,6 +45,7 @@ node 'search02.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+        include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/search02.interfaces',
 	}
@@ -83,6 +85,7 @@ node 'search03.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+        include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/search03.interfaces',
 	}
@@ -122,6 +125,7 @@ node 'search04.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+        include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/search04.interfaces',
 	}
@@ -162,6 +166,7 @@ node 'search05.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+        include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/search05.interfaces',
 	}
@@ -201,6 +206,7 @@ node 'search06.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+        include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/search06.interfaces',
 	}

@@ -1,24 +1,32 @@
 class nagios-server {
 
-	file { '/usr/local/nagios/etc/servers/hosts.cfg':
+	file { '/usr/local/nagios/etc/nagios.cfg':
 		owner => nagios,
 		group => nagios,
-		mode  => 644,
-		content => file('nagios-server/hosts.cfg'),
+		mode  => 664,
+		content => file('nagios-server/nagios.cfg'),
+		audit => content,
+		notify => Exec["Bounce nagios"],
 	}
 
-	file { '/usr/local/nagios/etc/servers/host_groups.cfg':
+	file { '/usr/local/nagios/etc/servers':
+		ensure => directory,
 		owner => nagios,
 		group => nagios,
-		mode  => 644,
-		content => file('nagios-server/host_groups.cfg'),
+		recurse => true,
+		mode  => 664,
+		source => 'puppet:///modules/nagios-server/configs',
+		audit => content,
+		notify => Exec["Bounce nagios"],
 	}
 
-	file { '/usr/local/nagios/etc/servers/service_definitions.cfg':
-		owner => nagios,
-		group => nagios,
-		mode  => 644,
-		content => file('nagios-server/service_definitions.cfg'),
+	service { 'nagios':
+		ensure => 'running',
 	}
 
+	exec { 'Bounce nagios':
+		user => root,
+		refreshonly => true,
+		command => '/bin/systemctl restart apache2; /bin/systemctl restart nagios',
+	}
 }

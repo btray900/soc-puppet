@@ -6,6 +6,7 @@ node 'nagios01.ks.vimro.com' {
 	include certs
 	include filebeats
 	include nagios-server
+	include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/nagios01.interfaces',
 	}
@@ -29,6 +30,8 @@ node 'nagios02.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+	include nagios-server
+	include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/nagios02.interfaces',
 	}

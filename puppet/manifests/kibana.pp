@@ -5,6 +5,7 @@ node 'kibana01.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+	include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/kibana01.interfaces',
 	}
@@ -52,6 +53,7 @@ node 'kibana02.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+        include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/kibana02.interfaces',
 	}
@@ -99,6 +101,7 @@ node 'kibana03.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+        include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/kibana03.interfaces',
 	}

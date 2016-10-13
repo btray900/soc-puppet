@@ -1,3 +1,4 @@
+
 node 'logstash01.ks.vimro.com' {
 	include hosts
 	include ssh-keys
@@ -5,6 +6,7 @@ node 'logstash01.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+        include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/logstash01.interfaces',
 	}
@@ -34,6 +36,7 @@ node 'logstash02.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+        include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/logstash02.interfaces',
 	}
@@ -62,6 +65,7 @@ node 'logstash03.ks.vimro.com' {
 	include postfix
 	include openjdk
 	include filebeats
+        include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/logstash03.interfaces',
 	}

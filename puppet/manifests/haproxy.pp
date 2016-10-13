@@ -6,6 +6,7 @@ node 'haproxy01.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+	include nagios-client
 	class { 'sysctl': 
 		source => 'puppet:///modules/sysctl/haproxy.sysctl.conf',
 	}
@@ -36,6 +37,7 @@ node 'haproxy02.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+        include nagios-client
 	class { 'sysctl': 
 		source => 'puppet:///modules/sysctl/haproxy.sysctl.conf',
 	}
