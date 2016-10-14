@@ -149,6 +149,7 @@ node 'kibana04.ks.vimro.com' {
 	include openjdk
 	include certs
 	include filebeats
+	include nagios-client
 	class { 'networking': 
 		source => 'puppet:///modules/networking/kibana04.interfaces',
 	}

@@ -113,3 +113,8 @@ LABEL nagios01
     MENU LABEL Install 16.04.1 - nagios01
     KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
     APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=nagios01 url=http://10.0.48.1/preseed/nagios01.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+LABEL nagios02
+    MENU LABEL Install 16.04.1 - nagios02
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=nagios02 url=http://10.0.48.1/preseed/nagios02.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs

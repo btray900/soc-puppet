@@ -1,11 +1,17 @@
 class nagios-client {
 
 	package { 'nagios-nrpe-server':
-		ensure => 'installed',
+		ensure => present,
+		before => File['/etc/nagios/nrpe.cfg'],
 	}
 
 	package { 'nagios-plugins':
-		ensure => 'installed',
+		ensure => present,
+	}
+
+	service { 'nagios-nrpe-server':
+		ensure => running,
+		require => Package['nagios-nrpe-server'],
 	}
 
 	file { '/etc/nagios/nrpe.cfg':
@@ -15,10 +21,7 @@ class nagios-client {
 		content => template('nagios-client/nrpe.cfg.erb'),
 		audit  => content,
 		notify => Exec["Bounce NRPE Server"],
-	}
-
-	service { 'nagios-nrpe-server':
-		ensure => 'running',
+		require => Package['nagios-nrpe-server'],
 	}
 
 	exec { 'Bounce NRPE Server':
