@@ -16,7 +16,7 @@ class nagios-server {
 		owner => nagios,
 		group => nagios,
 		recurse => true,
-		mode  => 664,
+		mode  => 755,
 		source => 'puppet:///modules/nagios-server/libexec',
 		audit => content,
 		notify => Exec["Bounce nagios"],
