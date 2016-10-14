@@ -1,21 +1,23 @@
 class nagios-server {
 
-	file { '/usr/local/nagios/etc/nagios.cfg':
-		owner => nagios,
-		group => nagios,
-		mode  => 664,
-		content => file('nagios-server/nagios.cfg'),
-		audit => content,
-		notify => Exec["Bounce nagios"],
-	}
-
-	file { '/usr/local/nagios/etc/servers':
+	file { '/usr/local/nagios/etc':
 		ensure => directory,
 		owner => nagios,
 		group => nagios,
 		recurse => true,
 		mode  => 664,
-		source => 'puppet:///modules/nagios-server/configs',
+		source => 'puppet:///modules/nagios-server/etc',
+		audit => content,
+		notify => Exec["Bounce nagios"],
+	}
+
+	file { '/usr/local/nagios/libexec':
+		ensure => directory,
+		owner => nagios,
+		group => nagios,
+		recurse => true,
+		mode  => 664,
+		source => 'puppet:///modules/nagios-server/libexec',
 		audit => content,
 		notify => Exec["Bounce nagios"],
 	}
