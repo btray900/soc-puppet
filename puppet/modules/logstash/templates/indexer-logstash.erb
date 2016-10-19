@@ -14,6 +14,14 @@ input {
 }
 
 filter {
+	if [type] == "log" {
+		if [source] == "/var/log/kibana/kibana.log" {
+			json {
+				source => "message"
+			}
+		}
+	}
+
 	if [type] == "F5syslog" {
 		grok {     
 			break_on_match => false
