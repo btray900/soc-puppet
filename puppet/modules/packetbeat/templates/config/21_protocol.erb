@@ -1,0 +1,3 @@
+  <%= name %>:<% conf.each_pair do |key, value| %><% if value.kind_of?(Array) %>
+    <%= key %>: [<%= value.join(',') %>]<% else %>
+    <%= key %>: <%= value %><% end %><% end %>

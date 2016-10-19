@@ -6,9 +6,11 @@ node 'kibana01.ks.vimro.com' {
 	include certs
 	include filebeats
 	include nagios-client
+
 	class { 'networking': 
 		source => 'puppet:///modules/networking/kibana01.interfaces',
 	}
+
 	class { 'kibana': 
 		base_url => 'http://10.0.48.1/kibana',
 		es_url => 'http://172.16.49.41:9200',
@@ -17,6 +19,7 @@ node 'kibana01.ks.vimro.com' {
 		verify_ssl => true,
 		startup_timeout => '5000',
 	}
+
 	class { 'elasticsearch':
 		config => { 
 			'cluster.name' => 'piCLUSTER',
@@ -32,17 +35,29 @@ node 'kibana01.ks.vimro.com' {
 		},
 		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.4.1.deb',
 	}
+
 	elasticsearch::instance { 'kibana01': }
+
         class {'elastic_filebeat':
                 package_file => '/tmp/filebeat_1.2.2_amd64.deb',
                 logstash_output_enabled => true,
                 logstash_output_hosts => ['logstash.cp.vimro.com:5044']
         }
+
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log','/var/log/elasticsearch/kibana01/*.log','/var/log/kibana/*.log'],
         }
+
 	class { '::ntp':
 		servers => ['10.0.48.1'],
+	}
+
+	class { '::packetbeat': }
+
+	packetbeat::protocol { 'http':
+		config => {
+			ports => [5601]
+		}
 	}
 }
 
@@ -92,6 +107,13 @@ node 'kibana02.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
+
+	packetbeat::protocol { 'http':
+		config => {
+			ports => [5601]
+		}
+	}
+
 }
 
 node 'kibana03.ks.vimro.com' {
@@ -139,6 +161,12 @@ node 'kibana03.ks.vimro.com' {
         }
 	class { '::ntp':
 		servers => ['10.0.48.1'],
+	}
+
+	packetbeat::protocol { 'http':
+		config => {
+			ports => [5601]
+		}
 	}
 }
 
@@ -188,4 +216,11 @@ node 'kibana04.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
+
+	packetbeat::protocol { 'http':
+		config => {
+			ports => [5601]
+		}
+	}
+
 }

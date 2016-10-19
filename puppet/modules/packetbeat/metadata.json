@@ -1,0 +1,14 @@
+{
+  "name": "ferrydg-packetbeat",
+  "version": "0.5.3",
+  "author": "ferrydg",
+  "summary": "Packetbeat is the open source data shipper that integrates with Elasticsearch and Kibana to provide real-time analytics for web, database, and other network protocols.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/ferrydg/puppet-packetbeat",
+  "project_page": "https://github.com/ferrydg/puppet-packetbeat",
+  "issues_url": "https://github.com/ferrydg/puppet-packetbeat/issues",
+  "dependencies": [
+    {"name":"ispavailability/file_concat","version_requirement":">= 0.3.0"}
+  ],
+  "data_provider": null
+}

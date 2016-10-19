@@ -1,0 +1,9 @@
+############################# Sniffer #########################################
+
+# Select the network interfaces to sniff the data. You can use the "any"
+# keyword to sniff on all connected interfaces.
+interfaces:
+  device: <%= @sniffer_conf['device'] %>
+  <% if (@sniffer_conf['snaplen']) %>snaplen: <%= @sniffer_conf['snaplen'] %><% end %>
+  <% if (@sniffer_conf['type']) %>type: <%= @sniffer_conf['type'] %><% end %>
+  <% if (@sniffer_conf['buffer_size_mb']) %>buffer_size_mb: <%= @sniffer_conf['buffer_size_mb'] %><% end %>

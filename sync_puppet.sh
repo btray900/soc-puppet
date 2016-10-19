@@ -5,5 +5,4 @@
 
 /bin/cp ~/soc-puppet/pxe/default /var/lib/tftpboot/pxelinux.cfg/default
 
-/usr/bin/rsync -av ~/soc-puppet/www/kibana/ /var/www/html/kibana
-/usr/bin/rsync -av ~/soc-puppet/www/preseed/ /var/www/html/preseed
+/usr/bin/rsync -av ~/soc-puppet/www/* /var/www/html/
