@@ -1,13 +1,3 @@
-# == Class packetbeat::params
-#
-# === Parameters
-#
-# This class does not provide any parameters.
-
-#
-# === Examples
-#
-# This class is not intended to be used directly.
 class packetbeat::params {
 
     $configfile = '/etc/packetbeat/packetbeat.yml'
@@ -31,7 +21,7 @@ class packetbeat::params {
             include_additionals => false,
         },
         http => {
-            ports => [80,8080,8000,5000,8002],
+            ports => [80,8080,8000,5000,5601,9090,9200,9300,8002],
             send_request => false,
             send_response => false,
             hide_keywords => [],
@@ -121,6 +111,6 @@ class packetbeat::params {
             keepfiles => 7
         },
         selectors => [],
-        level => 'error'
+        level => 'debug'
     }
 }

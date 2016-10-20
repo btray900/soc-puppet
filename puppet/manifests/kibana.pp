@@ -27,7 +27,7 @@ node 'kibana01.ks.vimro.com' {
 			'node.master' => 'false',
 			'node.data' => 'false',
 			'index.mapper.dynamic' => 'true',
-                        'action.auto_create_index' => '+logstash*,+marvel*,+.*',
+                        'action.auto_create_index' => '+packetbeat*,+winlogbeat*,+topbeat*,+filebeat*,+logstash*,+marvel*,+.*',
 			'discovery.zen.fd.ping_timeout' => '30s',
 			'discovery.zen.minimum_master_nodes' => '1',
 			'discovery.zen.ping.multicast.enabled' => 'false',
@@ -56,7 +56,7 @@ node 'kibana01.ks.vimro.com' {
 
 	packetbeat::protocol { 'http':
 		config => {
-			ports => [5601]
+			ports => [5601,9200,9300],
 		}
 	}
 }
@@ -87,6 +87,7 @@ node 'kibana02.ks.vimro.com' {
 			'node.master' => 'false',
 			'node.data' => 'false',
 			'index.mapper.dynamic' => 'true',
+                        'action.auto_create_index' => '+packetbeat*,+winlogbeat*,+topbeat*,+filebeat*,+logstash*,+marvel*,+.*',
                         'action.auto_create_index' => '+logstash*,+marvel*,+.*',
 			'discovery.zen.fd.ping_timeout' => '30s',
 			'discovery.zen.minimum_master_nodes' => '1',
@@ -107,12 +108,7 @@ node 'kibana02.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
-
-	packetbeat::protocol { 'http':
-		config => {
-			ports => [5601]
-		}
-	}
+	class { '::packetbeat': }
 
 }
 
@@ -142,7 +138,7 @@ node 'kibana03.ks.vimro.com' {
 			'node.master' => 'false',
 			'node.data' => 'false',
 			'index.mapper.dynamic' => 'true',
-                        'action.auto_create_index' => '+logstash*,+marvel*,+.*',
+                        'action.auto_create_index' => '+packetbeat*,+winlogbeat*,+topbeat*,+filebeat*,+logstash*,+marvel*,+.*',
 			'discovery.zen.fd.ping_timeout' => '30s',
 			'discovery.zen.minimum_master_nodes' => '1',
 			'discovery.zen.ping.multicast.enabled' => 'false',
@@ -162,12 +158,8 @@ node 'kibana03.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
+	class { '::packetbeat': }
 
-	packetbeat::protocol { 'http':
-		config => {
-			ports => [5601]
-		}
-	}
 }
 
 node 'kibana04.ks.vimro.com' {
@@ -196,7 +188,7 @@ node 'kibana04.ks.vimro.com' {
 			'node.master' => 'false',
 			'node.data' => 'false',
 			'index.mapper.dynamic' => 'true',
-                        'action.auto_create_index' => '+logstash*,+marvel*,+.*',
+                        'action.auto_create_index' => '+packetbeat*,+winlogbeat*,+topbeat*,+filebeat*,+logstash*,+marvel*,+.*',
 			'discovery.zen.fd.ping_timeout' => '30s',
 			'discovery.zen.minimum_master_nodes' => '1',
 			'discovery.zen.ping.multicast.enabled' => 'false',
@@ -216,11 +208,6 @@ node 'kibana04.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
-
-	packetbeat::protocol { 'http':
-		config => {
-			ports => [5601]
-		}
-	}
+	class { '::packetbeat': }
 
 }
