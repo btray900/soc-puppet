@@ -36,6 +36,15 @@ node 'search01.ks.vimro.com' {
         class { '::ntp':
                 servers => ['10.0.48.1'],
         }
+
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [9200,9300],
+                }
+        }
+
 }
 
 node 'search02.ks.vimro.com' {
@@ -75,6 +84,13 @@ node 'search02.ks.vimro.com' {
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
+        }
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [9200,9300],
+                }
         }
 }
 
@@ -116,6 +132,13 @@ node 'search03.ks.vimro.com' {
         class { '::ntp':
                 servers => ['10.0.48.1'],
         }
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [9200,9300],
+                }
+        }
 }
 
 node 'search04.ks.vimro.com' {
@@ -155,6 +178,13 @@ node 'search04.ks.vimro.com' {
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
+        }
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [9200,9300],
+                }
         }
 }
 
@@ -197,6 +227,13 @@ node 'search05.ks.vimro.com' {
         class { '::ntp':
                 servers => ['10.0.48.1'],
         }
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [9200,9300],
+                }
+        }
 }
 
 node 'search06.ks.vimro.com' {
@@ -236,6 +273,13 @@ node 'search06.ks.vimro.com' {
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
+        }
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [9200,9300],
+                }
         }
 }
 

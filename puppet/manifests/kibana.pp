@@ -108,7 +108,14 @@ node 'kibana02.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
-	class { '::packetbeat': }
+
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [5601,9200,9300],
+                }
+        }
 
 }
 
@@ -158,7 +165,14 @@ node 'kibana03.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
-	class { '::packetbeat': }
+
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [5601,9200,9300],
+                }
+        }
 
 }
 
@@ -208,6 +222,13 @@ node 'kibana04.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
-	class { '::packetbeat': }
+
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [5601,9200,9300],
+                }
+        }
 
 }

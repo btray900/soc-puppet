@@ -13,4 +13,24 @@ node soc-puppet {
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log'],
         }
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [80],
+                }
+        }
+        packetbeat::protocol { 'dns':
+                config => {
+                        ports => [53],
+                }
+        }
+	class { 'topbeat':
+		output => {
+			'logstash'     => {
+				'hosts' => ['logstash.cp.vimro.com:5044'],
+				'loadbalance' => false,
+			},
+		},
+	}
 }

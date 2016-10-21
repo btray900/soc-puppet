@@ -27,6 +27,15 @@ node 'haproxy01.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
+
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [80,8080,9200,9300,9090],
+                }
+        }
+
 }
 
 node 'haproxy02.ks.vimro.com' {
@@ -58,4 +67,13 @@ node 'haproxy02.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
+
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [80,8080,9200,9300,9090],
+                }
+        }
+
 }

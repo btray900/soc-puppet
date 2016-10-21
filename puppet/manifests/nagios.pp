@@ -21,6 +21,15 @@ node 'nagios01.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
+
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [80],
+                }
+        }
+
 }
 
 node 'nagios02.ks.vimro.com' {
@@ -46,4 +55,12 @@ node 'nagios02.ks.vimro.com' {
 	class { '::ntp':
 		servers => ['10.0.48.1'],
 	}
+
+        class { '::packetbeat': }
+
+        packetbeat::protocol { 'http':
+                config => {
+                        ports => [80],
+                }
+        }
 }
