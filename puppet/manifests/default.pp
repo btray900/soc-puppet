@@ -13,4 +13,13 @@ node default {
         elastic_filebeat::prospector{'system_logs':
                 paths => ['/var/log/*.log','/var/log/dmesg','/var/log/syslog','/var/log/apt/*.log'],
         }
+
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 }

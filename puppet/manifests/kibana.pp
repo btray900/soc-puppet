@@ -59,6 +59,14 @@ node 'kibana01.ks.vimro.com' {
 			ports => [5601,9200,9300],
 		}
 	}
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 }
 
 node 'kibana02.ks.vimro.com' {
@@ -117,6 +125,14 @@ node 'kibana02.ks.vimro.com' {
                 }
         }
 
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 }
 
 node 'kibana03.ks.vimro.com' {
@@ -174,6 +190,15 @@ node 'kibana03.ks.vimro.com' {
                 }
         }
 
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
+
 }
 
 node 'kibana04.ks.vimro.com' {
@@ -229,6 +254,15 @@ node 'kibana04.ks.vimro.com' {
                 config => {
                         ports => [5601,9200,9300],
                 }
+        }
+
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
         }
 
 }

@@ -27,6 +27,14 @@ node 'logstash01.ks.vimro.com' {
         class { '::ntp':
                 servers => ['10.0.48.1'],
         }
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 }
 
 node 'logstash02.ks.vimro.com' {
@@ -57,6 +65,14 @@ node 'logstash02.ks.vimro.com' {
         class { '::ntp':
                 servers => ['10.0.48.1'],
         }
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 }
 
 node 'logstash03.ks.vimro.com' {
@@ -85,5 +101,13 @@ node 'logstash03.ks.vimro.com' {
         }
         class { '::ntp':
                 servers => ['10.0.48.1'],
+        }
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
         }
 }

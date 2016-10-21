@@ -30,6 +30,14 @@ node 'nagios01.ks.vimro.com' {
                 }
         }
 
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 }
 
 node 'nagios02.ks.vimro.com' {
@@ -62,5 +70,13 @@ node 'nagios02.ks.vimro.com' {
                 config => {
                         ports => [80],
                 }
+        }
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
         }
 }

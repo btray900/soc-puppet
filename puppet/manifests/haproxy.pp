@@ -35,6 +35,14 @@ node 'haproxy01.ks.vimro.com' {
                         ports => [80,8080,9200,9300,9090],
                 }
         }
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 
 }
 
@@ -76,4 +84,12 @@ node 'haproxy02.ks.vimro.com' {
                 }
         }
 
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 }

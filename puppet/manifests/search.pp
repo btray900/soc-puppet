@@ -44,6 +44,14 @@ node 'search01.ks.vimro.com' {
                         ports => [9200,9300],
                 }
         }
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 
 }
 
@@ -92,6 +100,15 @@ node 'search02.ks.vimro.com' {
                         ports => [9200,9300],
                 }
         }
+
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 }
 
 node 'search03.ks.vimro.com' {
@@ -139,6 +156,14 @@ node 'search03.ks.vimro.com' {
                         ports => [9200,9300],
                 }
         }
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 }
 
 node 'search04.ks.vimro.com' {
@@ -185,6 +210,14 @@ node 'search04.ks.vimro.com' {
                 config => {
                         ports => [9200,9300],
                 }
+        }
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
         }
 }
 
@@ -234,6 +267,14 @@ node 'search05.ks.vimro.com' {
                         ports => [9200,9300],
                 }
         }
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
+        }
 }
 
 node 'search06.ks.vimro.com' {
@@ -280,6 +321,14 @@ node 'search06.ks.vimro.com' {
                 config => {
                         ports => [9200,9300],
                 }
+        }
+        class { 'topbeat':
+                output => {
+                        'logstash'     => {
+                                'hosts' => ['logstash.cp.vimro.com:5044'],
+                                'loadbalance' => false,
+                        },
+                },
         }
 }
 
