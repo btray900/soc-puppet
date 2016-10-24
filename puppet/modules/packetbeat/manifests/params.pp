@@ -111,6 +111,6 @@ class packetbeat::params {
             keepfiles => 7
         },
         selectors => [],
-        level => 'debug'
+        level => 'warning'
     }
 }
