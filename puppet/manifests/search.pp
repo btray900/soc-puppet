@@ -79,7 +79,7 @@ node 'search02.ks.vimro.com' {
 			'discovery.zen.ping.multicast.enabled' => 'false',
 			'discovery.zen.ping.unicast.hosts' => ['search01.cp.vimro.com','search03.cp.vimro.com','search04.cp.vimro.com','search05.cp.vimro.com','search06.cp.vimro.com'],
 		},
-		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
+		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.4.1.deb',
 	}
 	elasticsearch::instance { 'search02': }
         class {'elastic_filebeat':
@@ -135,7 +135,7 @@ node 'search03.ks.vimro.com' {
 			'discovery.zen.ping.multicast.enabled' => 'false',
 			'discovery.zen.ping.unicast.hosts' => ['search01.cp.vimro.com','search02.cp.vimro.com','search04.cp.vimro.com','search05.cp.vimro.com','search06.cp.vimro.com'],
 		},
-		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
+		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.4.1.deb',
 	}
 	elasticsearch::instance { 'search03': }
         class {'elastic_filebeat':
@@ -190,7 +190,7 @@ node 'search04.ks.vimro.com' {
 			'discovery.zen.ping.multicast.enabled' => 'false',
 			'discovery.zen.ping.unicast.hosts' => ['search01.cp.vimro.com','search02.cp.vimro.com','search03.cp.vimro.com','search05.cp.vimro.com','search06.cp.vimro.com'],
 		},
-		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
+		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.4.1.deb',
 	}
 	elasticsearch::instance { 'search04': }
         class {'elastic_filebeat':
@@ -246,7 +246,7 @@ node 'search05.ks.vimro.com' {
 			'discovery.zen.ping.multicast.enabled' => 'false',
 			'discovery.zen.ping.unicast.hosts' => ['search01.cp.vimro.com','search02.cp.vimro.com','search03.cp.vimro.com','search04.cp.vimro.com','search06.cp.vimro.com'],
 		},
-		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
+		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.4.1.deb',
 	}
 	elasticsearch::instance { 'search05': }
         class {'elastic_filebeat':
@@ -301,7 +301,7 @@ node 'search06.ks.vimro.com' {
 			'discovery.zen.ping.multicast.enabled' => 'false',
 			'discovery.zen.ping.unicast.hosts' => ['search01.cp.vimro.com','search02.cp.vimro.com','search03.cp.vimro.com','search04.cp.vimro.com','search05.cp.vimro.com'],
 		},
-		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.3.2.deb',
+		package_url => 'puppet:///modules/elasticsearch/elasticsearch-2.4.1.deb',
 	}
 	elasticsearch::instance { 'search06': }
         class {'elastic_filebeat':
