@@ -1,5 +1,10 @@
 class nagios-server {
 
+	file { '/var/www/html/index.html':
+		audit => content,
+		source => 'puppet:///modules/nagios-server/index.html',
+	}
+
 	file { '/usr/local/nagios/etc':
 		ensure => directory,
 		owner => nagios,
