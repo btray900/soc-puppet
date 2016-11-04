@@ -1,0 +1,15 @@
+### MANAGED BY PUPPET DAWG ###
+---
+action.auto_create_index: +.*,+packetbeat*,+metricbeat,+topbeat*,+filebeat*,+packetbeat*,+logstash*,+marvel*
+cluster.name: ViMRoCLuSTeR
+discovery.zen.fd.ping_timeout: 30s
+discovery.zen.minimum_master_nodes: 1
+discovery.zen.ping.unicast.hosts: <%= @unicast_hosts %>
+network.host: <%= @network_host %>
+node.data: <%= @node_data %>
+node.master: <%= @node_master %>
+node.name: ${HOSTNAME}
+path.data: /usr/share/elasticsearch/data
+path.logs: /var/log/elasticsearch
+bootstrap.memory_lock: true
+

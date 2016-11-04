@@ -21,6 +21,13 @@ noescape 1
 timeout 0
 default pxelinux.cfg/vesamenu.c32
 
+### BASE 16.04 INSTALL
+LABEL generic
+    MENU LABEL Install 16.04.1 - Generic Linux Server
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.1-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.1-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=generic url=http://10.0.48.1/preseed/generic.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.1/install/filesystem.squashfs
+
+
 ### HAPROXY NODES
 
 LABEL haproxy01
