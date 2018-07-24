@@ -21,6 +21,16 @@ noescape 1
 timeout 0
 default pxelinux.cfg/vesamenu.c32
 
+
+### BASIC NODES ###
+
+LABEL airship01
+    MENU LABEL Install 16.04.4 - airship01
+    KERNEL pxe/images/ubuntu/ubuntu-16.04.4-x86_64
+    APPEND initrd=pxe/images/ubuntu/ubuntu-16.04.4-x86_64.img ksdevice=ens160 locale=en_US.UTF-8 keyboard-configuration/layoutcode=us interface=ens160 hostname=airship01 url=http://10.0.48.1/preseed/basic01.cfg live-installer/net-image=http://10.0.48.1/ubuntu/16.04.4/install/filesystem.squashfs
+
+
+
 ### HAPROXY NODES
 
 LABEL haproxy01
