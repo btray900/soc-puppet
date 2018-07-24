@@ -13,7 +13,7 @@ echo "### PUPPETMASTER IS: "
 /bin/systemctl is-active puppetmaster
 echo ""
 echo "### LOCALHOST IN PUPPET?"
-puppet cert list --all | grep soc-puppet
+puppet cert list --all | grep puppet
 echo ""
 echo "### PRESEED REACHABLE?"
 curl http://10.0.48.1/preseed/haproxy01.cfg | grep late_command
